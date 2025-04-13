@@ -7,10 +7,10 @@ class WorkoutsList extends StatelessWidget {
   final Function(Workout) onWorkoutTap;
 
   const WorkoutsList({
-    Key? key,
+    super.key,
     required this.workouts,
     required this.onWorkoutTap,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

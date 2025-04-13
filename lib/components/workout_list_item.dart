@@ -7,15 +7,15 @@ class WorkoutListItem extends StatelessWidget {
   final Function() onTap;
 
   const WorkoutListItem({
-    Key? key,
+    super.key,
     required this.workout,
     required this.onTap,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
     final exerciseCount = workout.exercises.length;
-    
+
     return Card(
       margin: const EdgeInsets.symmetric(vertical: 4, horizontal: 8),
       elevation: 1,
@@ -44,7 +44,7 @@ class WorkoutListItem extends StatelessWidget {
                 ),
               ),
               const SizedBox(width: 16),
-              
+
               // Right side - Workout details
               Expanded(
                 child: Column(
@@ -74,7 +74,9 @@ class WorkoutListItem extends StatelessWidget {
                         const SizedBox(width: 4),
                         Text(
                           DateFormat('dd/MM/yyyy').format(workout.updatedAt),
-                          style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                          style: Theme.of(
+                            context,
+                          ).textTheme.bodySmall?.copyWith(
                             color: Theme.of(context).colorScheme.secondary,
                           ),
                         ),
@@ -87,7 +89,9 @@ class WorkoutListItem extends StatelessWidget {
                         const SizedBox(width: 4),
                         Text(
                           '$exerciseCount exercícios',
-                          style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                          style: Theme.of(
+                            context,
+                          ).textTheme.bodySmall?.copyWith(
                             color: Theme.of(context).colorScheme.secondary,
                           ),
                         ),
@@ -96,7 +100,7 @@ class WorkoutListItem extends StatelessWidget {
                   ],
                 ),
               ),
-              
+
               // Arrow icon
               Icon(
                 Icons.chevron_right,

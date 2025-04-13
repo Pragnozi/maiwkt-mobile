@@ -7,10 +7,10 @@ class WorkoutGroupsGrid extends StatelessWidget {
   final Function(WorkoutGroup) onWorkoutGroupTap;
 
   const WorkoutGroupsGrid({
-    Key? key,
+    super.key,
     required this.workoutGroups,
     required this.onWorkoutGroupTap,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

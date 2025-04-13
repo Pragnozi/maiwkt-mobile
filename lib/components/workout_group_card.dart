@@ -6,10 +6,10 @@ class WorkoutGroupCard extends StatelessWidget {
   final Function() onTap;
 
   const WorkoutGroupCard({
-    Key? key,
+    super.key,
     required this.workoutGroup,
     required this.onTap,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
